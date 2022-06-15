@@ -57,11 +57,11 @@ def register():
                 hashpass = bcrypt.hashpw(request.form['pass'].encode('utf-8'),bcrypt.gensalt())
                 users.insert_one({'user_id': request.form['user_id'], 'password': hashpass })
                 session['user_id'] = request.form['user_id']
-                return redirect(url_for('index'))
+                return redirect(url_for('home'))
             else:
                 return "Both passwords must be same!" 
         return 'UserId already exists!'
-    return render_template('register.html')
+    return render_template('register3.html')
 
 
 if __name__ == "__main__":
