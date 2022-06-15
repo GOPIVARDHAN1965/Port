@@ -1,0 +1,4 @@
+To activate virtual env -- source env/bin/activate
+to deactivate virtual env -- deactivate source
+
+ 
