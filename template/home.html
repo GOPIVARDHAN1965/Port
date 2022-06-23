@@ -9,12 +9,14 @@
             .sidenav {height: 100%;width: 350px;position: fixed;z-index: 1;top: 100;left: 20;background-color: #111;overflow-x: hidden;padding-top: 50px;}
             .sidenav a {
                         padding: 10px 10px 10px 32px;
+                        border-top:5px solid white;
                         text-decoration: none;
                         font-size: 25px;
-                        color: #818181;
+                        color: gray;
                         display: block;}
             .sidenav a:hover {color: #f1f1f1;}
-            
+            /*.lg{border-bottom: 5px solid white;}*/
+            /*.ho{border-top: 0px;}*/
             @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
             
         </style>
@@ -30,7 +32,7 @@
             </ul>
         </div>
         <div class="sidenav">
-            <a href="#">Home</a>
+            <a href="#" class="ho">Home</a>
             <a href="#">Employee</a>
             <a href="#">Holiday Wages</a>
             <a href="#">Attendance Modification</a>
@@ -40,5 +42,5 @@
             <a href="#">Reports</a>
             <a href="#">Change Password</a>
             <!--<a href="#"><img src="https://www.kindpng.com/picc/m/19-194798_transparent-logout-png-sign-out-icon-transparent-png.png" height="40px">Logout</a>-->
-            <a href="#">Logout</a>
+            <a href="#" class="lg">Logout</a>
         </div>
