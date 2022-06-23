@@ -29,7 +29,7 @@ def home():
 def index():
     if 'user_id' in session:
         return 'Your are logged in as '+session['user_id']
-    return render_template('index.html')
+    return render_template('login.html')
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -61,7 +61,7 @@ def register():
             else:
                 return "Both passwords must be same!" 
         return 'UserId already exists!'
-    return render_template('register3.html')
+    return render_template('register.html')
 
 
 if __name__ == "__main__":

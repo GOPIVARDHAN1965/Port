@@ -1,55 +1,42 @@
-{% extends 'temp.html' %}
-
-{% block head %}
-<title>Register</title>
-{% endblock%}
-
-{% block body %} 
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <form method=POST action="{{ url_for('register') }}">
-                <div class="form-group">
-                    <label for="exampleInputEmail1">UserId</label>
-                    <input type="text" class="form-control" name="user_id" placeholder="UserId">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" name="pass" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword2">Re-enter Password</label>
-                    <input type="password" class="form-control" name="pass2" placeholder="Re-enter Password">
-                </div>
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
-            </form>
-            <br>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Register Page</title>
+        <meta name="viewport" context="width=device-width,intial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <style>
+            div.top{background:aqua; border-bottom: 10px solid black;white-space: nowrap;; overflow:hidden}
+            div.bottom{background-image: url("https://vizagtourism.org.in/images/places-to-visit/header/visakhapatnam-port-tourism-entry-fee-timings-holidays-reviews-header.jpg");background-repeat: no-repeat; background-size: cover;}
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <ul>
+                <li style="list-style-type: none;float:left; "><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Visakhapatnam_Port_logo.jpg" width="200px" height="160px"></li>
+                <br><br>
+                <div>
+                    <li style="list-style-type: none;margin-left: 50px; float:left;"><h1>VISAKHAPATNAM PORT TRUST</h1></li>
+                </div>  
+            </ul>
         </div>
-    </div>
-</div> -->
-<div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-          <!-- try to fill out this space -->
-      </div>
-      <div class="col-sm-4">
-        <form method=POST action="{{ url_for('register') }}">
-            <div class="form-group">
-                <label for="exampleInputEmail1">UserId</label>
-                <input type="text" class="form-control" name="user_id" placeholder="UserId">
+        <div class="bottom">
+            <div class="container">
+                <div class="row vh-100 justify-content-center align-items-center">
+                <div class="col-8 col-md-6 col-lg-4 text-center">
+                    <h2 class="h2 my-4"><b style="color: azure;">Sign up here</b></h2>
+                    <form method=POST action="{{ url_for('register') }}">
+                        <input type="text" class="form-control p-3 rounded-0 rounded-top" name="user_id" id="e"  placeholder="username">
+                        
+                        <input type="password" class="form-control p-3 rounded-0 rounded-bottom" name="pass" id="p" placeholder="Set Password">
+        
+                        <input type="password" class="form-control p-3 rounded-0 rounded-top" id="q"  name="pass2" placeholder="Confirm Password">
+                        
+                        <button type="Register" class="btn btn-primary w-100">Register</button>
+                      </form>
+                </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" name="pass" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword2">Re-enter Password</label>
-                <input type="password" class="form-control" name="pass2" placeholder="Re-enter Password">
-            </div>
-            <button type="submit" class="btn btn-primary btn-block">Register</button>
-        </form>
-        <br>
-      </div>
-    </div>
-  </div>
-{% endblock %}
+
+        </div>
+    </body>
+</html>
