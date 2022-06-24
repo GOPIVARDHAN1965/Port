@@ -19,26 +19,23 @@ try:
 except:
     print("Error connecting to the DB")
 
-@app.route('/home')
-def home():
-    if 'user_id' in session:
-        return render_template('home.html')
-    return render_template('login.html')
 
-@app.route('/')
-def index():
-    if 'user_id' in session:
-        return 'Your are logged in as '+session['user_id']
-    return render_template('login.html')
+# @app.route('/')
+# def index():
+#     if 'user_id' in session:
+#         return 'Your are logged in as '+session['user_id']
+#     return render_template('login.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/', methods=['POST','GET'])
 def login():
-    users = db.users
-    login_user = users.find_one({'user_id': request.form['user_id']})
-    if login_user:
-        if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
-            session['user_id'] = request.form['user_id']
-            return redirect(url_for('home'))
+    if request.method=='POST':
+        users = db.users
+        login_user = users.find_one({'user_id': request.form['user_id']})
+        if login_user:
+            if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
+                session['user_id'] = request.form['user_id']
+                return redirect(url_for('home'))
+    
     return render_template('login.html')
 
 @app.route('/logout')
@@ -60,9 +57,13 @@ def register():
                 return redirect(url_for('home'))
             else:
                 return "Both passwords must be same!" 
-        else:
-            flash("User already exists!",category='danger')
     return render_template('register.html')
+
+@app.route('/home')
+def home():
+    if 'user_id' in session:
+        return render_template('home.html')
+    return render_template('login.html')
 
 
 if __name__ == "__main__":
