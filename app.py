@@ -2,7 +2,7 @@ from base64 import encode
 from crypt import methods
 from encodings import utf_8
 import bcrypt
-from flask import Flask, redirect, render_template, request, session, url_for
+from flask import Flask, flash, redirect, render_template, request, session, url_for
 import pymongo
 
 
@@ -22,8 +22,8 @@ except:
 @app.route('/home')
 def home():
     if 'user_id' in session:
-        return render_template('employee.html')
-    return render_template('index.html')
+        return render_template('home.html')
+    return render_template('login.html')
 
 @app.route('/')
 def index():
@@ -39,7 +39,7 @@ def login():
         if bcrypt.hashpw(request.form['pass'].encode('utf-8'), login_user['password']) == login_user['password']:
             session['user_id'] = request.form['user_id']
             return redirect(url_for('home'))
-    return 'Invalid UserId/password'
+    return render_template('login.html')
 
 @app.route('/logout')
 def logout():
@@ -60,7 +60,8 @@ def register():
                 return redirect(url_for('home'))
             else:
                 return "Both passwords must be same!" 
-        return 'UserId already exists!'
+        else:
+            flash("User already exists!",category='danger')
     return render_template('register.html')
 
 

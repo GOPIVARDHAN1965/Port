@@ -24,10 +24,10 @@
                 <div class="row vh-100 justify-content-center align-items-center">
                 <div class="col-8 col-md-6 col-lg-4 text-center">
                     <h2 class="h2 my-4" ><b style="color: azure;">Please Sign in</b></h2>
-                    <form>
-                        <input type="text" class="form-control p-3 rounded-0 rounded-top" id="e"  placeholder="username">
+                    <form method=POST action="{{ url_for('login') }}">
+                        <input type="text" class="form-control p-3 rounded-0 rounded-top" id="e" name="user_id"  placeholder="username">
                         
-                        <input type="password" class="form-control p-3 rounded-0" id="p" placeholder="password">
+                        <input type="password" class="form-control p-3 rounded-0" id="p" name="pass" placeholder="password">
                         
                         <!--<input type="password" class="form-control p-3 rounded-0 rounded-bottom" id="pr" placeholder="Dont have an account? sign up">-->
         
