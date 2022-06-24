@@ -41,7 +41,7 @@ def login():
 @app.route('/logout')
 def logout():
     session.clear()
-    return redirect(url_for('index'))
+    return redirect(url_for('login'))
 
 
 @app.route('/regsiter',methods=['POST','GET'])
