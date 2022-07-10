@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Attendance Modification Form</title>
+        <meta name="viewport" context="width=device-width,intial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <style>
+            div.top{background:aqua; border-bottom: 10px solid black;white-space: nowrap;overflow:hidden}
+            .sidenav {height: 100%;width: 350px;position: fixed;z-index: 1;top: 100;left: 20;background-color: #111;overflow-x:auto ;padding-top: 50px;}
+            .sidenav a {
+                        padding: 10px 10px 10px 32px;
+                        text-decoration: none;
+                        font-size: 25px;
+                        color: #818181;
+                        display: block;}
+            .sidenav a:hover {color: #f1f1f1;}
+            div.content{height:100%;margin-left: 350px;}
+            table.center{margin-left: auto; margin-right: auto;}
+            td{padding: 5px;}
+            @media screen and (max-height: 450px) {.sidenav {padding-top: 15px;}.sidenav a {font-size: 18px;}}
+            
+        </style>
+    </head>
+    <body>
+        <div class="top">
+            <ul>
+                <li style="list-style-type: none;float:left; "><img src="https://upload.wikimedia.org/wikipedia/en/8/8e/Visakhapatnam_Port_logo.jpg" width="200px" height="160px"></li>
+                <br><br>
+                <div>
+                    <li style="list-style-type: none;margin-left: 50px; float:left;"><h1>VISAKHAPATNAM PORT TRUST</h1></li>
+                </div>
+            </ul>
+        </div>
+        <div class="sidenav">
+            <a href="#">Home</a>
+            <a href="#">Employee</a>
+            <a href="#">Holiday Wages</a>
+            <a href="#">Attendance Modification</a>
+            <a href="#">Leave Application</a>
+            <a href="#">Leave Modification</a>
+            <a href="#">Overtime</a>
+            <a href="#">Reports</a>
+            <a href="#">Change Password</a>
+            <a href="">Logout</a>         
+        </div>
+        <div class="content">
+            <h1 style="text-align:center">Attendance Modification</h1>
+            <hr>
+            <br>
+            <form>
+                <table class="center">
+                    <tr>
+                        <td><label for="empnum">SAP No.(Employee No.)</label></td>
+                        <td><select name = "dropdown" id="empnum">
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="dept">Department</label></td>
+                        <td><select name = "dropdown" id="dept">
+                            <option value = "Datacentre">Datacentre</option>
+                            <option value = "Vigilance">Vigilance</option>
+                            <option value = "Security">Security</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="section">Section (Sub-Area)</label></td>
+                        <td><select name = "dropdown" id="section" name="sub-area">
+                            <option value = "1">1</option>
+                            <option value = "2">2</option>
+                            <option value = "3">3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="hdatefrom">Holiday From</label></td>
+                        <td><input type="date" id="hdatefrom" name="Holiday date from"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="hdateto">Holiday to</label></td>
+                        <td><input type="date" id="hdateto" name="Holiday date to"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="button"value="Save"></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>
